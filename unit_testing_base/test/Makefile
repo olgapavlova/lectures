@@ -15,5 +15,5 @@ env: $(TEST_DIR)test_env.c
 	
 black: $(SRC_DIR)black.c $(TEST_DIR)test_black.c
 	rm -f $(BUILD_DIR)black.o
-	$(CC) $(CFLAGS) -c $(SRC_DIR)black.c -o $(BUILD_DIR)black.o
-	$(CC) $(CFLAGS) -o $(BUILD_DIR)$@ $(TEST_DIR)test_black.c $(BUILD_DIR)black.o
+	$(CC) $(CFLAGS) -c $(SRC_DIR)black.c -o $(BUILD_DIR)black.o -D TEST
+	$(CC) $(CFLAGS) -o $(BUILD_DIR)$@ $(TEST_DIR)test_black.c $(BUILD_DIR)black.o $(CHECK_FLAGS)
