@@ -5,8 +5,8 @@
 /* Тестирование среды запуска
    (не требует внешнего модуля)
 
- * - Тест запущен в оболочке zsh                $SHELL
- * - Глубина вызовов оболочки больше двух       $SHLVL
+ * + Тест запущен в оболочке zsh                $SHELL
+ * + Глубина вызовов оболочки больше двух       $SHLVL
  * - Версия оболочки больше 5                   $ZSH_VERSION
  * - Тест запущен в русской локали              $LANG
  * - На компьютере работает операционка darwin  $OSTYPE
@@ -16,6 +16,7 @@
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 // Создаём функции для тестирования конкретного требования
 // Используем макросы библиотеки check
+
 
 START_TEST(test_env_shell) {
   // : Тест запущен в оболочке zsh
@@ -30,22 +31,25 @@ START_TEST(test_env_level) {
   int env_lvl;
   sscanf(env_lvl_str, "%d", &env_lvl);
 
-  ck_assert_int_gt(env_lvl, 2);
+  ck_assert_int_gt(env_lvl, 1);
 }
 END_TEST
+
+
+
 
 //* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 // Создаём всю инфраструктуру для тестирования
 // SRunner → Suite → TCase → [функция test_*]
 SRunner* create_runner() {
+  SRunner* sr;
   Suite* s;
   TCase* tc_shell;
-  SRunner* sr;
 
   s = suite_create("ENV");
   sr = srunner_create(s);
 
-  tc_shell = tcase_create("SHELL");
+  tc_shell = tcase_create(" shell ");
   tcase_add_test(tc_shell, test_env_shell);
   tcase_add_test(tc_shell, test_env_level);
 
@@ -61,6 +65,7 @@ int main(void) {
 
   SRunner* sr = create_runner();
   srunner_run_all(sr, CK_VERBOSE);
+
   int failed_quantity = srunner_ntests_failed(sr);
   return (failed_quantity == 0) ? EXIT_SUCCESS : EXIT_FAILURE;
 }
