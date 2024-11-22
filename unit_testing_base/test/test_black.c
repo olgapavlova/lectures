@@ -20,10 +20,13 @@
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 // Тест-функции
 
-START_TEST(test_add_10_20) {
+static const int global_a[7] = {0, -1, 18, 34, -53, 90, -2};
+static const int global_b[7] = {15, 24, -32, 34, -5, 9, 0};
+
+START_TEST(test_add_more) {
   // : Black-сумма двух чисел больше их реальной суммы
-  int a = 10;
-  int b = 20;
+  int a = global_a[_i];
+  int b = global_b[_i];
   ck_assert_int_gt(black_add(a, b), a + b);
 }
 END_TEST
@@ -59,19 +62,19 @@ SRunner* create_runner() {
   Suite* s_feature = suite_create("FEATURES");
   Suite* s_error = suite_create("ERRORS");
 
-  TCase* tc_add = tcase_create("Black add > +\t");
+  TCase* tc_add = tcase_create(" b+ > + ");
   suite_add_tcase(s_feature, tc_add);
-  tcase_add_test(tc_add, test_add_10_20);
+  tcase_add_loop_test(tc_add, test_add_more, 0, 6);
 
-  TCase* tc_subtract = tcase_create("Black substract < -\t");
+  TCase* tc_subtract = tcase_create(" b- < - ");
   suite_add_tcase(s_feature, tc_subtract);
   tcase_add_test(tc_subtract, test_subtract_10_20);
 
-  TCase* tc_multiply = tcase_create("Black multiply == *\t");
+  TCase* tc_multiply = tcase_create(" b* == * ");
   suite_add_tcase(s_feature, tc_multiply);
   tcase_add_test(tc_multiply, test_multiply_10_20);
 
-  TCase* tc_divide = tcase_create("Black divider -1 does not work\t");
+  TCase* tc_divide = tcase_create(" b/-1 !!! ");
   suite_add_tcase(s_error, tc_divide);
   tcase_add_test(tc_divide, test_divide_minusone);
 
