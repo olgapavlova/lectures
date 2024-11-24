@@ -1,4 +1,5 @@
-# Основы модульного тестирования
+![1](https://github.com/user-attachments/assets/538f54ef-8e71-4f39-8002-46b3d23b2263)
+# Основы модульного тестирования на C • Check framework
 Материалы к стриму 2024-11-22.
 > [Запись на Youtube](https://youtu.be/BtfshpYmdTg?si=r-IJgWdnELGKizur) (1,5 часа; можно включать ускоренную).
 > 
