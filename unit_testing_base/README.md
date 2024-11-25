@@ -198,7 +198,7 @@ START_TEST(test_???) {
 ```c
 ...
 SRunner * create_runner() {
-	SRunner result;
+	SRunner * result;
 
 	Suite * s = suite_create("FEATURES");
 	TCase * tc = tcase_create("Feature");
