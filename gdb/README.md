@@ -1,4 +1,4 @@
-![2024-12-06](https://github.com/user-attachments/assets/123bb18e-aacd-4075-b015-21bea0f7b438)
+![2024-12-06-round](https://github.com/user-attachments/assets/1f9f97de-4f9f-4401-a45f-a2f4d8806464)
 
 # Отладчики в C • GDB—LLDB—…
 Запись стрима на Youtube: https://youtu.be/r6RMf5hXGbU
