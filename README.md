@@ -9,3 +9,4 @@
 * [Отладчики в С • gdb—lldb](https://github.com/olgapavlova/lectures/tree/main/gdb) ```2024-12-06```
 * [Логи в небольших проектах на C](https://github.com/olgapavlova/lectures/tree/main/logs) ```2024-12-13```
 * [Продвинутые техники и конкретные приёмы работы в <check.h>](https://github.com/olgapavlova/lectures/tree/main/checkplus) ```2024-12-20```
+* [Приёмы использования указателей на функции](https://github.com/olgapavlova/lectures/blob/main/function_pointers/) ```2024-12-27```
