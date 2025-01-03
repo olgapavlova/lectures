@@ -10,3 +10,4 @@
 * [Логи в небольших проектах на C](https://github.com/olgapavlova/lectures/tree/main/logs) ```2024-12-13```
 * [Продвинутые техники и конкретные приёмы работы в <check.h>](https://github.com/olgapavlova/lectures/tree/main/checkplus) ```2024-12-20```
 * [Приёмы использования указателей на функции](https://github.com/olgapavlova/lectures/blob/main/function_pointers/) ```2024-12-27```
+* [Мнимый полиморфизм в Си](https://github.com/olgapavlova/lectures/tree/main/polymorphism) ```2025-01-03```
