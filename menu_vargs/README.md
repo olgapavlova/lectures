@@ -1,3 +1,5 @@
+![2025-01-17-05](https://github.com/user-attachments/assets/4722fd21-9d1f-44a6-a5a6-777f2ddceaed)
+
 # Как делать функции с произвольным количеством аргументов
 
 Конспект к стриму ```2025-01-17``` ([Youtube-запись](https://youtu.be/ehYWvaGhVmM)).
