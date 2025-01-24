@@ -13,3 +13,4 @@
 * [Мнимый полиморфизм в Си](https://github.com/olgapavlova/lectures/tree/main/polymorphism) ```2025-01-03```
 * [Ошибки как часть дизайна программы на Си](https://github.com/olgapavlova/lectures/tree/main/errors_design) ```2025-01-10```
 * [Как делать функции с произвольным количеством аргументов произвольных типов](https://github.com/olgapavlova/lectures/tree/main/menu_vargs) ```2025-01-17```
+* [Практикуем мышление указателями](https://github.com/olgapavlova/lectures/tree/main/pointer_thinking) ```2025-01-24```
