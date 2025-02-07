@@ -15,3 +15,4 @@
 1. [Как делать функции с произвольным количеством аргументов произвольных типов](https://github.com/olgapavlova/lectures/tree/main/menu_vargs) ```2025-01-17```
 1. [Практикуем мышление указателями](https://github.com/olgapavlova/lectures/tree/main/pointer_thinking) ```2025-01-24```
 1. [Как работает и не работает обобщённый указатель void * в языке C (Си)](https://github.com/olgapavlova/lectures/tree/main/voidstar) ```2025-01-31```
+1. [Препроцессор и его макросы в C](https://github.com/olgapavlova/lectures/blob/main/macro/) ```2025-02-07```
