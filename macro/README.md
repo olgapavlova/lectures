@@ -1,3 +1,5 @@
+![2025-02-07](https://github.com/user-attachments/assets/b7988b4f-4665-4814-8df7-aac4e1957bae)
+
 #  Препроцессор и его макросы в С
 Запись стрима на Youtube: https://youtu.be/mXRbSESitaI?si=CJSh-2eMbeoNkKr1 ```2025-02-07```
 
