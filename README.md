@@ -17,3 +17,5 @@
 1. [Как работает и не работает обобщённый указатель void * в языке C (Си)](https://github.com/olgapavlova/lectures/tree/main/voidstar) ```2025-01-31```
 1. [Препроцессор и его макросы в C](https://github.com/olgapavlova/lectures/blob/main/macro/) ```2025-02-07```
 2. [(Анти)паттерн Singleton в C (Си)](https://github.com/olgapavlova/lectures/tree/main/singleton) ```2025-02-14```
+3. [Менеджер динамической памяти для небольших проектов на C](https://github.com/olgapavlova/lectures/tree/main/regmem) ```2025-02-21```
+4. [Структуры данных для себя, любимых](https://github.com/olgapavlova/lectures/tree/main/structdata) ```2025-02-28```
