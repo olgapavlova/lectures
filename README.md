@@ -19,3 +19,4 @@
 2. [(Анти)паттерн Singleton в C (Си)](https://github.com/olgapavlova/lectures/tree/main/singleton) ```2025-02-14```
 3. [Менеджер динамической памяти для небольших проектов на C](https://github.com/olgapavlova/lectures/tree/main/regmem) ```2025-02-21```
 4. [Структуры данных для себя, любимых](https://github.com/olgapavlova/lectures/tree/main/structdata) ```2025-02-28```
+5. [Механизм setjmp()/longjmp()](https://github.com/olgapavlova/lectures/tree/main/setjmp) ```2025-03-07```
