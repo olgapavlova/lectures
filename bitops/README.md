@@ -10,19 +10,9 @@ Youtube-запись лекции от ```2025-03-14```: https://youtu.be/XxHtIc
 - Бинарную систему диктует электричество — но не строго
 - Много где хитро наприменяли
 
-<aside>
-<img src="/icons/balloon_blue.svg" alt="/icons/balloon_blue.svg" width="40px" />
-
 Вопрос **данных**, а не вычислений
 
-</aside>
-
-<aside>
-<img src="/icons/orbit_green.svg" alt="/icons/orbit_green.svg" width="40px" />
-
 Чаще всего двоичное число — это не число «в лоб», а **что-то другое**
-
-</aside>
 
 ## А при чём тут драйверы, наша цель и мечта?
 
@@ -52,19 +42,10 @@ classDef physical fill:#fff,stroke:#979736,stroke-width:5px,color:#880088;
 classDef digit fill:#979736,color:#fff;
 ```
 
-<aside>
-<img src="/icons/fireworks_green.svg" alt="/icons/fireworks_green.svg" width="40px" />
-
 Цифровой мир **очень** абстрагировался от ноликов и единичек
-
-</aside>
-
-<aside>
-<img src="/icons/balloon_pink.svg" alt="/icons/balloon_pink.svg" width="40px" />
 
 А остальные — не очень
 
-</aside>
 
 ## База побитовых операций в C
 
@@ -82,21 +63,13 @@ classDef digit fill:#979736,color:#fff;
 
 ## Какие абстракции можно собрать из нулей и единичек?
 
-<aside>
-<img src="/icons/apple_orange.svg" alt="/icons/apple_orange.svg" width="40px" />
-
 Побитовые операции происходят **не то чтобы с битами**
-
-</aside>
 
 ### Числа
 
-<aside>
-<img src="/icons/orbit_green.svg" alt="/icons/orbit_green.svg" width="40px" />
 
 Ну все же знакомы с бинарной арифметикой?
 
-</aside>
 
 - Двоичный вывод числа
 
@@ -226,12 +199,7 @@ int main() {
 
 ### Кодирование
 
-<aside>
-<img src="/icons/orbit_green.svg" alt="/icons/orbit_green.svg" width="40px" />
-
 Интуитивно понятно, когда есть документация
-
-</aside>
 
 ### Битовые поля
 
