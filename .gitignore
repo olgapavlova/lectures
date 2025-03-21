@@ -1,3 +1,5 @@
 l
 *.swp
-backlog
+*.run
+*.o
+*.a
