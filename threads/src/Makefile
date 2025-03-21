@@ -4,8 +4,8 @@
 CC = gcc
 CFLAGS = -std=c11 -O2
 
-all: wait_sym.c
-	$(CC) $(CFLAGS) $< -o $(subst .c,.run,$<)
+all: counter.c
+	$(CC) $(CFLAGS) $< -o $(subst .c,.run,$<) -lpthread
 	./$(subst .c,.run,$<)
 
 clear: clean
