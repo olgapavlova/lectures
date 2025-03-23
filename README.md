@@ -21,3 +21,4 @@
 4. [Структуры данных для себя, любимых](https://github.com/olgapavlova/lectures/tree/main/structdata) ```2025-02-28```
 5. [Механизм setjmp()/longjmp()](https://github.com/olgapavlova/lectures/tree/main/setjmp) ```2025-03-07```
 6. [Роль побитовых операций в C](https://github.com/olgapavlova/lectures/tree/main/bitops) ```2025-03-14```
+7. [Самое-самое начало многопоточности](https://github.com/olgapavlova/lectures/blob/main/threads/) ```2025-03-21```
