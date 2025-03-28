@@ -107,8 +107,9 @@ static void _show_ip_for_all_open_ports(uint32_t ip, portlist_t * pl) {
 static void _show_ip_if_alive(net_t* net, uint32_t ip) {
   char buffer[INET_ADDRSTRLEN] = {'\0'};
   _convert_ip_from_uint_to_str(buffer, ip);
+
   int dead = _scan_one_host_one_port(buffer, net->pl.data[0].number);
-  if (!dead) printf("%s\n", buffer);
+  if (!dead) printf("%s %d\n", buffer, ip);
 }
 
 // Поток для проверки 80-го порта и вывода IP для отзывающихся хостов

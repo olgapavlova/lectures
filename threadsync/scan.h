@@ -19,7 +19,7 @@
 #define STRL 1000
 
 // Сколько потоков заводим
-#define TNUM 4
+#define TNUM 255
 
 // Значения по умолчанию
 #define SUBNET "192.168.0.1/24"
