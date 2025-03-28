@@ -1,0 +1,9 @@
+  // Определяем диапазон адресов сети
+  struct in_addr a;
+  inet_pton(AF_INET, ip, &a);
+  uint32_t ipl = ntohl(a.s_addr);
+  uint32_t msk = 0xFFFFFFFF << (32 - len);  // просто определение маски
+  uint32_t ntw = ipl & msk;  // определение сети
+  uint32_t brd = ntw | ~msk; // определение сети
+
+  // Все адреса подсети
