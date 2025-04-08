@@ -1,1 +1,0 @@
-savedcmd_/home/op/dev/olgapavlova/lectures/khello/silent/modules.order := {   echo /home/op/dev/olgapavlova/lectures/khello/silent/silent.o; :; } > /home/op/dev/olgapavlova/lectures/khello/silent/modules.order

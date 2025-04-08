@@ -173,7 +173,7 @@ int main(int argc, char** argv) {
   }
 
   // А если все порты?
-  if (0) {
+  if (1) {
     // Запускаем треды
     pthread_t th[TNUM] = {0};
     for (int i = 0; i < TNUM; i++) {

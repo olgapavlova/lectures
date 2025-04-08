@@ -1,1 +1,0 @@
-savedcmd_/home/op/dev/olgapavlova/lectures/khello/silent/silent.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T scripts/module.lds -o /home/op/dev/olgapavlova/lectures/khello/silent/silent.ko /home/op/dev/olgapavlova/lectures/khello/silent/silent.o /home/op/dev/olgapavlova/lectures/khello/silent/silent.mod.o

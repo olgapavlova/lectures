@@ -1,1 +1,0 @@
-savedcmd_/home/op/dev/olgapavlova/lectures/khello/silent/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/op/dev/olgapavlova/lectures/khello/silent/Module.symvers -T /home/op/dev/olgapavlova/lectures/khello/silent/modules.order -i Module.symvers -e 
