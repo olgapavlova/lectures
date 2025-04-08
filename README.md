@@ -23,3 +23,4 @@
 6. [Роль побитовых операций в C](https://github.com/olgapavlova/lectures/tree/main/bitops) ```2025-03-14```
 7. [Самое-самое начало многопоточности](https://github.com/olgapavlova/lectures/blob/main/threads/) ```2025-03-21```
 8. [Многопоточный сканер сети](https://github.com/olgapavlova/lectures/tree/main/threadsync) ```2025-03-28```
+9. [Первый модуль ядра и инструменты для его разглядывания](https://github.com/olgapavlova/lectures/tree/main/khello) ```2025-04-04```
