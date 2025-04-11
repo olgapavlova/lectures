@@ -7,7 +7,7 @@ PWD = $(shell pwd)
 
 CC = $(shell grep CONFIG_CC_VERSION /boot/config-$(CURRENT) | cut -d'"' -f2 | awk '{print $$1}')
 
-TARGET = fixdev
+TARGET = cdrv
 obj-m := $(TARGET).o
 
 all:
