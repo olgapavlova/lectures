@@ -4,6 +4,7 @@
 
 # Материалы лекций
 
+## Дополнения к базе языка C
 1. [Основы модульного тестирования в C](unit_testing_base/) ```2024-11-22```
 1. [Нюансы работы с файлами в C на Linux](https://github.com/olgapavlova/lectures/tree/main/file_in_c_linux) ```2024-11-29```
 1. [Отладчики в С • gdb—lldb](https://github.com/olgapavlova/lectures/tree/main/gdb) ```2024-12-06```
@@ -16,12 +17,15 @@
 1. [Практикуем мышление указателями](https://github.com/olgapavlova/lectures/tree/main/pointer_thinking) ```2025-01-24```
 1. [Как работает и не работает обобщённый указатель void * в языке C (Си)](https://github.com/olgapavlova/lectures/tree/main/voidstar) ```2025-01-31```
 1. [Препроцессор и его макросы в C](https://github.com/olgapavlova/lectures/blob/main/macro/) ```2025-02-07```
-2. [(Анти)паттерн Singleton в C (Си)](https://github.com/olgapavlova/lectures/tree/main/singleton) ```2025-02-14```
-3. [Менеджер динамической памяти для небольших проектов на C](https://github.com/olgapavlova/lectures/tree/main/regmem) ```2025-02-21```
-4. [Структуры данных для себя, любимых](https://github.com/olgapavlova/lectures/tree/main/structdata) ```2025-02-28```
-5. [Механизм setjmp()/longjmp()](https://github.com/olgapavlova/lectures/tree/main/setjmp) ```2025-03-07```
-6. [Роль побитовых операций в C](https://github.com/olgapavlova/lectures/tree/main/bitops) ```2025-03-14```
-7. [Самое-самое начало многопоточности](https://github.com/olgapavlova/lectures/blob/main/threads/) ```2025-03-21```
-8. [Многопоточный сканер сети](https://github.com/olgapavlova/lectures/tree/main/threadsync) ```2025-03-28```
-9. [Первый модуль ядра и инструменты для его разглядывания](https://github.com/olgapavlova/lectures/tree/main/khello) ```2025-04-04```
-10. [Превращаем модуль ядра в драйвер](https://github.com/olgapavlova/lectures/tree/main/chardrive) `2025-04-11`
+1. [(Анти)паттерн Singleton в C (Си)](https://github.com/olgapavlova/lectures/tree/main/singleton) ```2025-02-14```
+1. [Менеджер динамической памяти для небольших проектов на C](https://github.com/olgapavlova/lectures/tree/main/regmem) ```2025-02-21```
+1. [Структуры данных для себя, любимых](https://github.com/olgapavlova/lectures/tree/main/structdata) ```2025-02-28```
+
+## Знания, полезные для создания драйверов
+1. [Механизм setjmp()/longjmp()](https://github.com/olgapavlova/lectures/tree/main/setjmp) ```2025-03-07```
+2. [Роль побитовых операций в C](https://github.com/olgapavlova/lectures/tree/main/bitops) ```2025-03-14```
+3. [Самое-самое начало многопоточности](https://github.com/olgapavlova/lectures/blob/main/threads/) ```2025-03-21```
+4. [Многопоточный сканер сети](https://github.com/olgapavlova/lectures/tree/main/threadsync) ```2025-03-28```
+5. [Первый модуль ядра и инструменты для его разглядывания](https://github.com/olgapavlova/lectures/tree/main/khello) ```2025-04-04```
+6. [Превращаем модуль ядра в драйвер](https://github.com/olgapavlova/lectures/tree/main/chardrive) `2025-04-11`
+7. [Шина, протокол, микроконтроллер — наглядное первое знакомство](https://github.com/olgapavlova/lectures/tree/main/tinyhard) `2025-04-18`
