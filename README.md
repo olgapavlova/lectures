@@ -29,3 +29,4 @@
 5. [Первый модуль ядра и инструменты для его разглядывания](https://github.com/olgapavlova/lectures/tree/main/khello) ```2025-04-04```
 6. [Превращаем модуль ядра в драйвер](https://github.com/olgapavlova/lectures/tree/main/chardrive) `2025-04-11`
 7. [Шина, протокол, микроконтроллер — наглядное первое знакомство](https://github.com/olgapavlova/lectures/tree/main/tinyhard) `2025-04-18`
+8. [Виртуальная и физическая память в ядре Linux • Щупаем средствами C](https://github.com/olgapavlova/lectures/tree/main/kmemory) `2025-04-25`
