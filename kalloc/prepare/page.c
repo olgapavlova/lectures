@@ -9,7 +9,6 @@
 
 static int __init page_init(void) {
   pr_info(MODULE_NICK ": trying to insert\n");
-
   struct page * reserve = alloc_pages(GFP_KERNEL, PAGE_ORDER);
   if(!reserve) {
     pr_err(MODULE_NICK ": alloc_pages(..., %d) failed\n", PAGE_ORDER);

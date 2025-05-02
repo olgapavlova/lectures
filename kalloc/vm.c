@@ -4,26 +4,27 @@
 
 #define MODULE_NICK "vm"
 
-#define VMAL_SIZE 1
-
-static int * reserve = NULL;
+#define KMAL_SIZE 1024 * 1024
 
 static int __init vm_init(void) {
-  pr_info(MODULE_NICK ": trying to insert\n");
-  reserve = vmalloc(VMAL_SIZE * PAGE_SIZE);
-  if(!*reserve) {
-    pr_err(MODULE_NICK ": vmalloc(%ld) failed\n", VMAL_SIZE * PAGE_SIZE);
+	pr_info(MODULE_NICK ": module inserted\n");
+
+  static void * reserve = NULL;
+  reserve = vmalloc(1024 * 1024);
+
+  if(!reserve) {
+    pr_err(MODULE_NICK ": vmalloc() failed\n");
     return -ENOMEM;
   } else {
     pr_info(MODULE_NICK ": reserved address: %pa\n", reserve);
   }
 
-  vfree(reserve);
+  kfree(reserve);
 	return 0;
 }
 
 static void __exit vm_exit(void) {
-  pr_info(MODULE_NICK ": module removed\n");
+	pr_info(MODULE_NICK ": module removed\n");
 }
 
 module_init(vm_init);

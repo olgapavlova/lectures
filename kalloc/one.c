@@ -2,17 +2,17 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#define UNIT_SIZE 1024
+
 int main(void) {
   void * heap_before = sbrk(0);
-  void * reserve = malloc(1);
-  if(reserve == NULL) exit(EXIT_FAILURE);
+  void * reserv = malloc(UNIT_SIZE);
   void * heap_after = sbrk(0);
 
-  printf("Границы кучи до:\t%p\n", heap_before);
-  printf("Выделенная область:\t%p\n", reserve);
-  printf("Ой, что это:\t\t\033[31m0x%012x\033[0m\n", (int)(reserve - heap_before));
-  printf("Граница кучи после:\t%p\n", heap_after);
-  printf("Разница:\t\t\033[33m0x%012d\033[0m\n", (int)(heap_after - heap_before));
+  printf("Верх кучи до:\t\t\t%p\n", heap_before);
+  printf("Адрес выделенного куска:\t%p\n", reserv);
+  printf("Верх кучи после:\t\t%p\n", heap_after);
+  printf("Дельта:\t\t\t\t0x%012x\n", (int)(heap_after - heap_before));
 
-  free(reserve);  // просто чтобы руку не сбивать
+  return 0;
 }
