@@ -238,12 +238,12 @@ clean:
 
 **AVR** — семейство, **ATMega32U4** — микроконтроллер, **Arduino** — обвязка
 
-![image.png](attachment:732150c1-408f-4f06-9de7-c40b3ef7d955:image.png)
+![0](https://github.com/user-attachments/assets/5762cef3-78c7-4e24-a76d-78cd5d7fb0d2)
+
 
 ## Мигнём светодиодиком
 
-![image.png](attachment:083c6ee4-621b-40a4-b4b6-0a4da57536ca:image.png)
-
+![1](https://github.com/user-attachments/assets/68b8ecae-d9db-4f5b-b845-8fc468d25afa)
 
 Внимание, **порт**!
 
@@ -265,7 +265,7 @@ clean:
 #include <avr/io.h>
 ...
 DDRB |= (1 << PB0);
-DDRB |= (1 << PD5);
+DDRD |= (1 << PD5);
 ```
 
 - Теперь нам надо «включать» и «выключать» электричество на `PB0` и `PD5`
@@ -282,8 +282,8 @@ PORTD ^= (1 << PD5);
 
 **Ну…**
 
+![2](https://github.com/user-attachments/assets/c64b6d3d-2b8c-43b7-a180-919fd0acf425)
 
-![image.png](attachment:f66d62d0-588d-4b0f-9279-209224e781dd:image.png)
 
 Всё «удобное» для микроконтроллеров — это библиотеки к регистрам
 
