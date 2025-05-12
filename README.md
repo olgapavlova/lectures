@@ -31,3 +31,6 @@
 7. [Шина, протокол, микроконтроллер — наглядное первое знакомство](https://github.com/olgapavlova/lectures/tree/main/tinyhard) `2025-04-18`
 8. [Виртуальная и физическая память в ядре Linux • Щупаем средствами C](https://github.com/olgapavlova/lectures/tree/main/kmemory) `2025-04-25`
 9. [Цена «естественных прав» на память в ядре Linux • Щупаем средствами C](https://github.com/olgapavlova/lectures/tree/main/kalloc) `2025-05-02`
+
+## Проект «Старая клавиатура» (базовый для изучения драйверов)
+1. [Порты, протоколы и регистры на нашу голову](https://github.com/olgapavlova/lectures/tree/main/kbmicro) `2025-05-09`
