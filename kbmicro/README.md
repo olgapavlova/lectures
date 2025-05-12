@@ -1,6 +1,7 @@
 ![2025-05-09](https://github.com/user-attachments/assets/18edefcc-f344-4490-8811-d98f5c307eb8)
 
 Youtube-запись от `2025-05-09`: https://youtu.be/C8iyBEhyhdM
+
 Код проекта: https://github.com/olgapavlova/oldkeyboard
 
 # Утилизируем с пользой древнюю клавиатуру. Часть 1: порты, протоколы и регистры на нашу голову
