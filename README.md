@@ -35,3 +35,4 @@
 ## Проект «Старая клавиатура» (базовый для изучения драйверов)
 1. [Порты, протоколы и регистры на нашу голову](https://github.com/olgapavlova/lectures/tree/main/kbmicro) `2025-05-09`
 2. [Превращаем электричество в данные на микроконтроллере ATmega32u4](https://github.com/olgapavlova/lectures/tree/main/kuart) `2025-05-16`
+3. [USB HID + запуск хоть чего-то на разных микроконтроллерах](https://github.com/olgapavlova/lectures/tree/main/usbhid) `2025-05-23`
