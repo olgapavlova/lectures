@@ -3,3 +3,4 @@ l
 *.run
 *.o
 *.a
+.vscode
