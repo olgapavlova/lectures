@@ -41,4 +41,4 @@
 
 ## Бессвязное
 1. [Бумажные книги по C и смежным вопросам](https://github.com/olgapavlova/lectures/tree/main/books) `2025-06-13`
-1. Шаблон небольшого проекта на C • Начало `2025-06-20`
+1. [Шаблон небольшого проекта на C • Начало](https://github.com/olgapavlova/lectures/tree/main/ctemp_start) `2025-06-20`
