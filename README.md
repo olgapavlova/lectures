@@ -23,17 +23,22 @@
 
 ## Знания, полезные для создания драйверов
 1. [Механизм setjmp()/longjmp()](https://github.com/olgapavlova/lectures/tree/main/setjmp) ```2025-03-07```
-2. [Роль побитовых операций в C](https://github.com/olgapavlova/lectures/tree/main/bitops) ```2025-03-14```
-3. [Самое-самое начало многопоточности](https://github.com/olgapavlova/lectures/blob/main/threads/) ```2025-03-21```
-4. [Многопоточный сканер сети](https://github.com/olgapavlova/lectures/tree/main/threadsync) ```2025-03-28```
-5. [Первый модуль ядра и инструменты для его разглядывания](https://github.com/olgapavlova/lectures/tree/main/khello) ```2025-04-04```
-6. [Превращаем модуль ядра в драйвер](https://github.com/olgapavlova/lectures/tree/main/chardrive) `2025-04-11`
-7. [Шина, протокол, микроконтроллер — наглядное первое знакомство](https://github.com/olgapavlova/lectures/tree/main/tinyhard) `2025-04-18`
-8. [Виртуальная и физическая память в ядре Linux • Щупаем средствами C](https://github.com/olgapavlova/lectures/tree/main/kmemory) `2025-04-25`
-9. [Цена «естественных прав» на память в ядре Linux • Щупаем средствами C](https://github.com/olgapavlova/lectures/tree/main/kalloc) `2025-05-02`
+1. [Роль побитовых операций в C](https://github.com/olgapavlova/lectures/tree/main/bitops) ```2025-03-14```
+1. [Самое-самое начало многопоточности](https://github.com/olgapavlova/lectures/blob/main/threads/) ```2025-03-21```
+1. [Многопоточный сканер сети](https://github.com/olgapavlova/lectures/tree/main/threadsync) ```2025-03-28```
+1. [Первый модуль ядра и инструменты для его разглядывания](https://github.com/olgapavlova/lectures/tree/main/khello) ```2025-04-04```
+1. [Превращаем модуль ядра в драйвер](https://github.com/olgapavlova/lectures/tree/main/chardrive) `2025-04-11`
+1. [Шина, протокол, микроконтроллер — наглядное первое знакомство](https://github.com/olgapavlova/lectures/tree/main/tinyhard) `2025-04-18`
+1. [Виртуальная и физическая память в ядре Linux • Щупаем средствами C](https://github.com/olgapavlova/lectures/tree/main/kmemory) `2025-04-25`
+1. [Цена «естественных прав» на память в ядре Linux • Щупаем средствами C](https://github.com/olgapavlova/lectures/tree/main/kalloc) `2025-05-02`
 
 ## Проект «Старая клавиатура» (базовый для изучения драйверов)
 1. [Порты, протоколы и регистры на нашу голову](https://github.com/olgapavlova/lectures/tree/main/kbmicro) `2025-05-09`
-2. [Превращаем электричество в данные на микроконтроллере ATmega32u4](https://github.com/olgapavlova/lectures/tree/main/kuart) `2025-05-16`
-3. [USB HID + запуск хоть чего-то на разных микроконтроллерах](https://github.com/olgapavlova/lectures/tree/main/usbhid) `2025-05-23`
-4. [USB HID • Реализация на LUFA](https://github.com/olgapavlova/lectures/tree/main/lufa) `2025-05-30`
+1. [Превращаем электричество в данные на микроконтроллере ATmega32u4](https://github.com/olgapavlova/lectures/tree/main/kuart) `2025-05-16`
+1. [USB HID + запуск хоть чего-то на разных микроконтроллерах](https://github.com/olgapavlova/lectures/tree/main/usbhid) `2025-05-23`
+1. [USB HID • Реализация на LUFA](https://github.com/olgapavlova/lectures/tree/main/lufa) `2025-05-30`
+1. Обработка сигналов от специальной клавиатуры `2025-06-06`
+
+## Бессвязное
+1. Бумажные книги по C и смежным вопросам `2025-06-13`
+1. Шаблон небольшого проекта на C • Начало `2025-06-20`
