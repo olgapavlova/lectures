@@ -37,7 +37,7 @@
 1. [Превращаем электричество в данные на микроконтроллере ATmega32u4](https://github.com/olgapavlova/lectures/tree/main/kuart) `2025-05-16`
 1. [USB HID + запуск хоть чего-то на разных микроконтроллерах](https://github.com/olgapavlova/lectures/tree/main/usbhid) `2025-05-23`
 1. [USB HID • Реализация на LUFA](https://github.com/olgapavlova/lectures/tree/main/lufa) `2025-05-30`
-1. Обработка сигналов от специальной клавиатуры `2025-06-06`
+1. [Обработка сигналов от специальной клавиатуры](https://github.com/olgapavlova/lectures/tree/main/kspec) `2025-06-06`
 
 ## Бессвязное
 1. Бумажные книги по C и смежным вопросам `2025-06-13`
