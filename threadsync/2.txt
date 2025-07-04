@@ -1,0 +1,19 @@
+/// Сканировать конкретный порт на конкретном IP
+int scan_one_host_one_port(const char * ip, const int port) {
+  // Создать дескриптор сокета (вся работа с сетью — через него)
+  int sckt = socket(AF_INET, SOCK_STREAM, 0);
+  if(sckt < 0) { exit(EXIT_FAILURE); }
+
+  // Создать структуру, описывающую адрес, который будем сканировать
+  struct sockaddr_in addr;
+  memset(&addr, 0, sizeof(addr));             // забьём нулями, а то мало ли
+  addr.sin_family = AF_INET;                  // TCP/IP
+  addr.sin_port = htons(port);               // а вот и big/little endian
+  inet_pton(AF_INET, ip, &(addr.sin_addr));  // преобразуем IP в бинарный формат
+
+  // Попытка связи и возврат результата
+  int result = connect(sckt, (struct sockaddr*)&addr, sizeof(addr));
+  shutdown(sckt, 2);
+  return result;
+}
+

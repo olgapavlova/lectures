@@ -1,0 +1,4 @@
+    struct in_addr ip_a = {0};
+    ip_a.s_addr = htonl(h);  // сетевой порядок байтов
+    inet_ntop(AF_INET, &ip_a, buffer, INET_ADDRSTRLEN);
+ 

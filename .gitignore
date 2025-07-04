@@ -1,1 +1,6 @@
-ut
+l
+*.swp
+*.run
+*.o
+*.a
+.vscode
