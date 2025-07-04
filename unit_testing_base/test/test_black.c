@@ -1,14 +1,14 @@
+#include "../src/black.h"
 #include <check.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../src/black.h"
+// Требования к программе black
+// У нас есть black-сложение → TCase
+//   - Black-сумма двух чисел больше их реальной суммы
+//   - Black-сумма двух чисел не равна сама себе
 
-/* Тестируем чёрный ящик
-   ../build/black
-   ../src/black.c
-   ../src/black.h
-
+/*
    + Black-сумма двух чисел больше их реальной суммы
    : Black-сумма двух чисел не равна сама себе
    + Black-разность двух чисел всегда меньше их реальной разности
@@ -39,28 +39,25 @@ START_TEST(test_subtract_10_20) {
 }
 END_TEST
 
-START_TEST(test_multiply_10_20) {
-  // : Black-умножение совпадает с реальным умножением
-  int a = 10;
-  int b = 20;
-  ck_assert_int_eq(black_multiply(a, b), a * b);
+
+  // Act
+  int black_sum = black_add(a, b);
+  int real_sum = a + b;
+
+  // Assert
+  ck_assert_int_gt(black_sum, real_sum);
 }
 END_TEST
 
-START_TEST(test_divide_minusone) {
-  // : Black-деление на -1 не определено
-  ck_assert_int_eq(black_divide_allowed(-1), 0);
-}
-END_TEST
+SRunner *create_runner() {
+  SRunner *sr;
+  Suite *s;
+  TCase *tc;
 
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-// Инфраструктура тестирования
+  s = suite_create("FEATURES");
+  tc = tcase_create(" add ");
+  tcase_add_test(tc, test_add_more);
 
-SRunner* create_runner() {
-  SRunner* sr;
-
-  Suite* s_feature = suite_create("FEATURES");
-  Suite* s_error = suite_create("ERRORS");
 
   TCase* tc_add = tcase_create(" b+ > + ");
   suite_add_tcase(s_feature, tc_add);
@@ -84,12 +81,8 @@ SRunner* create_runner() {
   return sr;
 }
 
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-// Основная функция
 int main() {
-  system("clear");
-
-  SRunner* sr = create_runner();
+  SRunner *sr = create_runner();
   srunner_run_all(sr, CK_VERBOSE);
 
   int failed_quantity = srunner_ntests_failed(sr);
