@@ -39,6 +39,8 @@
 1. [USB HID • Реализация на LUFA](https://github.com/olgapavlova/lectures/tree/main/lufa) `2025-05-30`
 1. [Обработка сигналов от специальной клавиатуры](https://github.com/olgapavlova/lectures/tree/main/kspec) `2025-06-06`
 
-## Бессвязное
+## Источники и инструменты
 1. [Бумажные книги по C и смежным вопросам](https://github.com/olgapavlova/lectures/tree/main/books) `2025-06-13`
 1. [Шаблон небольшого проекта на C • Начало](https://github.com/olgapavlova/lectures/tree/main/ctemp_start) `2025-06-20`
+1. Организация Makefile для небольшого проекта на C `2025-06-27`
+1. [C toolchain: мозаика быстрых решений](mosaic/) `2025-07-04`
