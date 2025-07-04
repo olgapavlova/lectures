@@ -43,4 +43,4 @@
 1. [Бумажные книги по C и смежным вопросам](https://github.com/olgapavlova/lectures/tree/main/books) `2025-06-13`
 1. [Шаблон небольшого проекта на C • Начало](https://github.com/olgapavlova/lectures/tree/main/ctemp_start) `2025-06-20`
 1. Makefile для новичков: пара приёмов и общий настрой использования `2025-06-27`
-1. [C toolchain: мозаика быстрых решений](mosaic/) `2025-07-04`
+1. [Скрещиваем Docker, Makefile и gcc](mosaic/) `2025-07-04`
