@@ -1,8 +1,8 @@
-
+![2025-07-04](https://github.com/user-attachments/assets/4c27a0bb-7438-41b4-98f8-2406117adf62)
 
 Youtube-запись от `2025-07-04`: https://youtu.be/wA02DPjQhqQ
 
-# C toolchain: мозаика быстрых решений
+# Скрещиваем Docker, Makefile и gcc
 
 Некоторые
 задачи
