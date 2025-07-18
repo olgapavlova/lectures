@@ -2,7 +2,7 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
-#include "elefant1200.h"
+#include "elefant500.h"
 
 int main(void) {
     // Настраиваем PB3 (D11) как выход
@@ -14,7 +14,6 @@ int main(void) {
 
     while (1) {
         for(int i = 0; i < SIZE; i++) {
-            // int y = ((elefant[i] >= 126) ? elefant[i] - 126 : 0) * 255 / (255 - 126);
             OCR2A = elefant[i];
             _delay_ms(4);
         }

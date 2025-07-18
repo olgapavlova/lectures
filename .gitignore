@@ -4,3 +4,4 @@ l
 *.o
 *.a
 .vscode
+*.hex

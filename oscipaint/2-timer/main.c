@@ -13,7 +13,7 @@ int main(void) {
 
     while (1) {
         for (uint8_t i = 0; i < 255; i++) {
-            OCR2A = i;         // установить скважность (яркость)
+            OCR2A = i;   
             _delay_ms(100);
         }
 

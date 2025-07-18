@@ -10,7 +10,7 @@ int main(void) {
     // Настраиваем таймер 2 в Fast PWM режиме, без делителя
     TCCR2A = (1 << COM2A1) | (1 << WGM21) | (1 << WGM20);  // несмещённый PWM, Fast PWM
     TCCR2B = (1 << CS20);  // делитель на 8
-    OCR2A = 64;           // установить скважность (яркость)
+    OCR2A = 0;
 
     while (1) {
         for(int i = 0; i <= 255; i++) {
@@ -20,7 +20,7 @@ int main(void) {
 
         for(int i = 255; i >= 0; i--) {
             OCR2A = i;
-            _delay_ms(2);
+            _delay_ms(1);
         }
     }
 }
