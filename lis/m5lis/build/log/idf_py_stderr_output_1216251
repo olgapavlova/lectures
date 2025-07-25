@@ -1,0 +1,7 @@
+CMake Error at /home/op/esp/esp-idf/tools/cmake/component.cmake:443 (message):
+  Called idf_component_register from a non-component directory.
+Call Stack (most recent call first):
+  CMakeLists.txt:10 (idf_component_register)
+
+
+ninja: error: rebuilding 'build.ninja': subcommand failed

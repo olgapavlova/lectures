@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/op/dev/olgapavlova/lectures/lis/m5lis/build/CMakeFiles/bootloader
+/home/op/dev/olgapavlova/lectures/lis/m5lis/build/CMakeFiles/bootloader.rule
+/home/op/dev/olgapavlova/lectures/lis/m5lis/build/CMakeFiles/bootloader-complete.rule
+/home/op/dev/olgapavlova/lectures/lis/m5lis/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/op/dev/olgapavlova/lectures/lis/m5lis/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/op/dev/olgapavlova/lectures/lis/m5lis/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/op/dev/olgapavlova/lectures/lis/m5lis/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/op/dev/olgapavlova/lectures/lis/m5lis/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/op/dev/olgapavlova/lectures/lis/m5lis/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/op/dev/olgapavlova/lectures/lis/m5lis/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

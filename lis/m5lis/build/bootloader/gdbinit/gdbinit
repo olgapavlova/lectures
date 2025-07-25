@@ -1,0 +1,2 @@
+source /home/op/dev/olgapavlova/lectures/lis/m5lis/build/bootloader/gdbinit/symbols
+source /home/op/dev/olgapavlova/lectures/lis/m5lis/build/bootloader/gdbinit/connect
