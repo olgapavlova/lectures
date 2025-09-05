@@ -2,25 +2,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static int fib = 1;
-static int prepre = 1;
 static int pre = 0;
-static int current = 0;
+static int prepre = 1;
+
+static int fib = 1;
+
 %}
 
 %%
 
-[0-9]+      {
-				current = atoi(yytext);
-				fib &= (prepre + pre == current);
+[0-9]+     {
+				int current = atoi(yytext);
+				fib &= (current == pre + prepre);
 				prepre = pre; pre = current;
 			}
-.|\n        ;                            
+
+.|\n       ;
+
 
 %%
 
 int main(void) {
-    yylex(); 
-	printf("Последовательность Фибоначчи:\t%s\n", (fib == 1) ? "да" : "нет");
-    return 0;
+	yylex();
+	printf("Фибоначчи?\t%s\n", (fib == 1) ? "да" : "нет" );
+	return 0;
 }
+

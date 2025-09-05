@@ -1,23 +1,36 @@
 %{
 #include <stdio.h>
 
+static int first = 1;
 static int count = 0;
 
 %}
 
 %%
 
-[0-9]+      {
-				count++;
-				printf("%s, ", yytext);
+[0-9]+     {
+					count++;
+					if (first == 1) {
+						printf("%s", yytext);
+						first = 0;
+					} else {
+						printf(", %s", yytext);		
+					}
 			}
-.|\n        ;                            
+
+.|\n       ;
+
 
 %%
 
 int main(void) {
-	printf("int arr[] = { ");
-    yylex();
-	printf(" }; // %d\n", count);
-    return 0;
+	printf("int arr[SIZE] = { ");
+	yylex();
+	printf(" };\n");
+	printf("#define SIZE %d\n", count);
+	return 0;
 }
+
+
+
+

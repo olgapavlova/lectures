@@ -2,30 +2,37 @@
 #include <stdio.h>
 
 static int line = 1;
-static int col  = 1;
+static int col = 1;
 static int tline = 1;
-static int tcol  = 1;
+static int tcol = 1;
 
-#define YY_USER_ACTION do {                             \
-        tline = line; tcol = col;                       \
-        for (int i = 0; i < yyleng; i++) {              \
-            if (yytext[i] == '\n') { line++; col = 1; } \
-            else { col++; }                             \
-        }                                               \
-    } while (0);
+#define YY_USER_ACTION do { \
+	tline = line; tcol = col;	\
+	if(yytext[0] == '\n') { line++; col = 1; } \
+	else { \
+			for (int i = 0; yytext[i] != '\0'; i++) { col++; } \
+	} \
+	} while(0);
 
 %}
 
 %%
 
-[0-9]+      {
-				printf("%3d / %3d : %4s\n", tline, tcol, yytext);
+[0-9]+     {
+			printf("%d / %d\t:\t%4s\n", tline, tcol, yytext);		
 			}
-.|\n        ;                            
+
+.|\n       ;
+
 
 %%
 
 int main(void) {
-    yylex();
-    return 0;
+	yylex();
+	printf("\n");
+	return 0;
 }
+
+
+
+
