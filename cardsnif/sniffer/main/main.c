@@ -1,102 +1,98 @@
-// main.c
-#include <string.h>
+// main/main.c
 #include <stdio.h>
-#include <inttypes.h>
+#include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+
 #include "esp_system.h"
-#include "nvs_flash.h"
-#include "esp_event.h"
 #include "esp_log.h"
-#include "esp_netif.h"
-#include "esp_wifi.h"
+#include "esp_err.h"
+
 #include "driver/gpio.h"
-#include "esp_timer.h"
+#include "driver/spi_master.h"
 
-static const char *TAG = "sniffer";
+#include "driver/sdmmc_host.h"    // содержит SDSPI_HOST_DEFAULT
+#include "sdmmc_cmd.h"
+#include "esp_vfs_fat.h"
 
-/* Простейшая функция для печати MAC в человекочитаемом виде */
-static void mac_to_str(const uint8_t *mac, char *out, size_t out_len) {
-    snprintf(out, out_len, "%02x:%02x:%02x:%02x:%02x:%02x",
-             mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+static const char *TAG = "sdtest";
+
+static esp_err_t mount_sd_spi_and_open_example(void)
+{
+    esp_err_t ret;
+
+    // 1) Настройка SPI host (M5 Cardputer обычно на SPI2_HOST)
+    sdmmc_host_t host = SDSPI_HOST_DEFAULT();
+    host.slot = SPI2_HOST;
+
+    // 2) Пины для M5 Cardputer (проверь ревизию — для большинства карт эти значения корректны)
+    const gpio_num_t PIN_NUM_CLK  = GPIO_NUM_40;
+    const gpio_num_t PIN_NUM_MISO = GPIO_NUM_39;
+    const gpio_num_t PIN_NUM_MOSI = GPIO_NUM_14;
+    const gpio_num_t PIN_NUM_CS   = GPIO_NUM_12;
+
+    // 3) Инициализация SPI bus
+    spi_bus_config_t bus_cfg = {
+        .mosi_io_num = PIN_NUM_MOSI,
+        .miso_io_num = PIN_NUM_MISO,
+        .sclk_io_num = PIN_NUM_CLK,
+        .quadwp_io_num = -1,
+        .quadhd_io_num = -1,
+        .max_transfer_sz = 4000,
+    };
+    ret = spi_bus_initialize(host.slot, &bus_cfg, SDSPI_DEFAULT_DMA);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "spi_bus_initialize failed: %s", esp_err_to_name(ret));
+        return ret;
+    }
+
+    // 4) Конфиг устройства SD на SPI
+    sdspi_device_config_t slot_config = SDSPI_DEVICE_CONFIG_DEFAULT();
+    slot_config.gpio_cs = PIN_NUM_CS;
+    slot_config.host_id = host.slot;
+
+    // 5) Монтирование FAT
+    esp_vfs_fat_sdmmc_mount_config_t mount_config = {
+        .format_if_mount_failed = false,
+        .max_files = 4,
+        .allocation_unit_size = 16 * 1024
+    };
+
+    sdmmc_card_t *card;
+    ret = esp_vfs_fat_sdspi_mount("/sdcard", &host, &slot_config, &mount_config, &card);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "esp_vfs_fat_sdspi_mount failed: %s (0x%x)", esp_err_to_name(ret), ret);
+        return ret;
+    }
+
+    ESP_LOGI(TAG, "SD mounted (name=%s, capacity=%lluMB)", card->cid.name, (unsigned long long)(card->csd.capacity / (1024ULL*1024ULL)));
+
+    // 6) Запись тестового файла
+    const char *path = "/sdcard/hello.txt";
+    FILE *f = fopen(path, "w");
+    if (!f) {
+        ESP_LOGE(TAG, "Failed to open file for writing");
+        // не размонтируем здесь — пусть вызывающий решит
+        return ESP_FAIL;
+    }
+    fprintf(f, "hello from Cardputer\n");
+    fflush(f);
+    fclose(f);
+
+    ESP_LOGI(TAG, "Wrote file: %s", path);
+    return ESP_OK;
 }
 
-/* Промискуитетный колбэк - вызывается для каждого принятых 802.11 кадров */
-static void wifi_sniffer_packet_handler(void *buff, wifi_promiscuous_pkt_type_t type) {
-    if (type != WIFI_PKT_MGMT && type != WIFI_PKT_DATA && type != WIFI_PKT_MISC) {
-        // Мы всё равно обрабатываем, но фильтрация возможна
+void app_main(void)
+{
+    esp_err_t err = mount_sd_spi_and_open_example();
+    if (err == ESP_OK) {
+        ESP_LOGI(TAG, "SD test OK");
+    } else {
+        ESP_LOGW(TAG, "SD test failed (%s). Check card, format (FAT32) and pins.", esp_err_to_name(err));
     }
 
-    const wifi_promiscuous_pkt_t *ppkt = (wifi_promiscuous_pkt_t *)buff;
-    const wifi_pkt_rx_ctrl_t rx_ctrl = ppkt->rx_ctrl;
-    const uint8_t *payload = ppkt->payload;
-    uint16_t len = rx_ctrl.sig_len; // длина принятого сигнала (в байтах, приблизительно)
-
-    int8_t rssi = rx_ctrl.rssi;
-    int64_t ts = esp_timer_get_time(); // микросекунды с запуска
-
-    // Попытка распарсить src/dst MAC (простая эвристика — работает в большинстве случаев)
-    char src[18] = "??:??:??:??:??:??";
-    char dst[18] = "??:??:??:??:??:??";
-    if (len >= 24) {
-        // frame control - 2 байта, addresses обычно начинаются с offset 4
-        const uint8_t *addr1 = payload + 4;   // DA / RA
-        const uint8_t *addr2 = payload + 10;  // SA / TA
-        mac_to_str(addr2, src, sizeof(src));
-        mac_to_str(addr1, dst, sizeof(dst));
-    }
-
-    // Поиск EAPOL (0x88 0x8e) в первых 64 байтах — простая эвристика
-    bool has_eapol = false;
-    uint16_t scan_bytes = len < 64 ? len : 64;
-    for (uint16_t i = 0; i + 1 < scan_bytes; ++i) {
-        if (payload[i] == 0x88 && payload[i+1] == 0x8e) { has_eapol = true; break; }
-    }
-
-    // Вывод в лог (CSV-подобный)
-    // ts_us, channel, len, rssi, src, dst, eapol_flag, first_16_bytes_hex
-    char first_hex[128] = {0};
-    int hex_written = 0;
-    int max_print = scan_bytes < 16 ? scan_bytes : 16;
-    for (int i = 0; i < max_print && hex_written < (int)sizeof(first_hex)-3; ++i) {
-        hex_written += snprintf(first_hex + hex_written, sizeof(first_hex) - hex_written, "%02x", payload[i]);
-    }
-
-    ESP_LOGI(TAG, "%lld,chan=%d,len=%u,rssi=%d,src=%s,dst=%s,eapol=%d,head=%s",
-             ts, rx_ctrl.channel, (unsigned)len, (int)rssi, src, dst, has_eapol ? 1 : 0, first_hex);
-}
-
-void app_main(void) {
-    // Инициализация NVS (требуется для WiFi)
-    esp_err_t ret = nvs_flash_init();
-    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-        nvs_flash_erase();
-        nvs_flash_init();
-    }
-
-    esp_netif_init();
-    esp_event_loop_create_default();
-
-    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
-    ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
-
-    // Устанавливаем режим STA (можно использовать NULL в некоторых примерах,
-    // но STA обеспечивает корректную работу радиомодуля)
-    ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA) );
-    ESP_ERROR_CHECK( esp_wifi_start() );
-
-    // Устанавливаем фиксированный канал (пока что не хоппим) — канал 6 как пример
-    uint8_t channel = 6;
-    ESP_ERROR_CHECK( esp_wifi_set_channel(channel, WIFI_SECOND_CHAN_NONE) );
-    ESP_LOGI(TAG, "Set channel %d", channel);
-
-    // Включаем promiscuous режим
-    ESP_ERROR_CHECK( esp_wifi_set_promiscuous(true) );
-    ESP_ERROR_CHECK( esp_wifi_set_promiscuous_rx_cb(&wifi_sniffer_packet_handler) );
-
-    ESP_LOGI(TAG, "Promiscuous sniffer started. Listening on channel %d", channel);
-
-    // Ничего больше не делаем в main — колбэк обрабатывает пакеты
+    // Оставим задачу спящую — можно перезагрузить/подключиться по монитор-порту и посмотреть файл на карте
     while (1) {
         vTaskDelay(pdMS_TO_TICKS(10000));
     }
