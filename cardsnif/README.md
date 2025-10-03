@@ -1,3 +1,8 @@
+
+<img width="1280" height="720" alt="2025-10-03" src="https://github.com/user-attachments/assets/876f863e-c5f6-4ba3-ba80-3ed0e57a6955" />
+
+Youtube-запись от `2025-10-03`: https://youtu.be/lAGk64EB0yA
+
 # Расшифровываем WiFi-логи
 
 ```
