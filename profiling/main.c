@@ -1,4 +1,5 @@
 // main.c — перемножение матриц
+#define _POSIX_C_SOURCE 199309L
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -77,18 +78,22 @@ int main(void) {
   matrix_randomize(a, wa, ha);
   matrix_randomize(b, ha, wa);
 
+  // настраиваем измерение времени;
+  struct timespec start, stop;
+
   // перемножаем матрицы
-  clock_t start = clock();
-  int ** mult = matrix_multiply(a, b, wa, ha);
-  clock_t stop = clock();
+  clock_gettime(CLOCK_MONOTONIC_RAW, &start);
+  matrix_multiply(a, b, wa, ha);
+  clock_gettime(CLOCK_MONOTONIC_RAW, &stop);
 
   // освобождаем память
   matrix_destroy(a, ha);
   matrix_destroy(b, wa);
 
   // отчитываемся
-  double time = (double)(stop - start) / CLOCKS_PER_SEC; 
-  printf("time: %lf\tstart: %ld\tstop: %ld\twidth: %d\theight: %d\n", time, start, stop, wa, ha);
+  double time = (stop.tv_sec - start.tv_sec) + 
+                (stop.tv_nsec - start.tv_nsec) / 1e9;
+  printf("time: %lf\n", time);
 
   // конец
   return EXIT_SUCCESS;
