@@ -5,3 +5,4 @@ l
 *.a
 .vscode
 *.hex
+*.out
