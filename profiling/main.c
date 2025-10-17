@@ -1,8 +1,7 @@
 // main.c — перемножение матриц
-#define _POSIX_C_SOURCE 199309L
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include <time.h>
 
 #define W_MAX 500
@@ -16,6 +15,20 @@
 #else
 #define SHOW(tmpl, ...) 
 #endif
+
+// Функция ассемблерной вставки timestamp через аппаратный счётчик
+static inline uint64_t read_cntvct(void) {
+    uint64_t val;
+    __asm__ volatile("mrs %0, cntvct_el0" : "=r" (val));
+    return val;
+}
+
+// Функция ассемблерной вставки для измерения частоты (тиков в секунду)
+static inline uint64_t read_cntfrq(void) {
+    uint64_t val;
+    __asm__ volatile("mrs %0, cntfrq_el0" : "=r" (val));
+    return val;
+}
 
 // Функция выделения памяти под матрицу
 int ** matrix_init(int w, int h) {
@@ -79,20 +92,20 @@ int main(void) {
   matrix_randomize(b, ha, wa);
 
   // настраиваем измерение времени;
-  struct timespec start, stop;
+  uint64_t freq = read_cntfrq();
 
   // перемножаем матрицы
-  clock_gettime(CLOCK_MONOTONIC_RAW, &start);
+  uint64_t start = read_cntvct();
   matrix_multiply(a, b, wa, ha);
-  clock_gettime(CLOCK_MONOTONIC_RAW, &stop);
+  uint64_t finish = read_cntvct();
 
   // освобождаем память
   matrix_destroy(a, ha);
   matrix_destroy(b, wa);
 
   // отчитываемся
-  double time = (stop.tv_sec - start.tv_sec) + 
-                (stop.tv_nsec - start.tv_nsec) / 1e9;
+  double time = (double)(finish - start) / freq;
+               
   printf("time: %lf\n", time);
 
   // конец
