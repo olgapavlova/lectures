@@ -4,16 +4,16 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define W_MAX 20
-#define H_MAX 20
+#define W_MAX 500
+#define H_MAX 500
 
-#define M_MAX 123
-#define M_MIN -123
+#define M_MAX 1
+#define M_MIN -1
 
 #if(S)
 #define SHOW(tmpl, ...) printf(tmpl, __VA_ARGS__);
 #else
-#define SHOW(x) 
+#define SHOW(tmpl, ...) 
 #endif
 
 // Функция выделения памяти под матрицу
@@ -32,7 +32,7 @@ int ** matrix_init(int w, int h) {
 void matrix_randomize(int ** m, int w, int h) {
   for(int i = 0; i < h; i++) {
     for(int j = 0; j < w; j++) {
-      m[i][j] = rand() % (M_MAX - M_MIN) + M_MIN + 1;
+      m[i][j] = rand() % (M_MAX - M_MIN + 1) + M_MIN;
       SHOW("%d\n", m[i][j]);
     }
   }
@@ -66,8 +66,8 @@ int main(void) {
   srand(time(NULL));
 
   // получаем случайные значения ширины и высоты матрицы
-  int wa = rand() % W_MAX + 1;
-  int ha = rand() % H_MAX + 1;
+  int wa = W_MAX; // rand() % W_MAX + 1;
+  int ha = H_MAX; // rand() % H_MAX + 1;
 
   // выделяем память под матрицы
   int ** a = matrix_init(wa, ha);
@@ -78,11 +78,17 @@ int main(void) {
   matrix_randomize(b, ha, wa);
 
   // перемножаем матрицы
+  clock_t start = clock();
   int ** mult = matrix_multiply(a, b, wa, ha);
+  clock_t stop = clock();
 
   // освобождаем память
   matrix_destroy(a, ha);
   matrix_destroy(b, wa);
+
+  // отчитываемся
+  double time = (double)(stop - start) / CLOCKS_PER_SEC; 
+  printf("time: %lf\tstart: %ld\tstop: %ld\twidth: %d\theight: %d\n", time, start, stop, wa, ha);
 
   // конец
   return EXIT_SUCCESS;
