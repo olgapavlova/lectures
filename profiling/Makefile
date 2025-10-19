@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -std=c11 \
 				 -O0 \
-				 -g
+				 -g -pg
 
 SRC = main.c
 TARGET = m

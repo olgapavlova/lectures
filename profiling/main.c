@@ -7,8 +7,8 @@
 #define W_MAX 500
 #define H_MAX 500
 
-#define M_MAX 1
-#define M_MIN -1
+#define M_MAX 2
+#define M_MIN -3
 
 #if(S)
 #define SHOW(tmpl, ...) printf(tmpl, __VA_ARGS__);
@@ -16,14 +16,12 @@
 #define SHOW(tmpl, ...) 
 #endif
 
-// Функция ассемблерной вставки timestamp через аппаратный счётчик
 static inline uint64_t read_cntvct(void) {
     uint64_t val;
     __asm__ volatile("mrs %0, cntvct_el0" : "=r" (val));
     return val;
 }
 
-// Функция ассемблерной вставки для измерения частоты (тиков в секунду)
 static inline uint64_t read_cntfrq(void) {
     uint64_t val;
     __asm__ volatile("mrs %0, cntfrq_el0" : "=r" (val));
@@ -79,9 +77,9 @@ int main(void) {
   // инициируем генератор случайных чисел
   srand(time(NULL));
 
-  // получаем случайные значения ширины и высоты матрицы
-  int wa = W_MAX; // rand() % W_MAX + 1;
-  int ha = H_MAX; // rand() % H_MAX + 1;
+  // получаем значения ширины и высоты матрицы
+  int wa = W_MAX;
+  int ha = H_MAX;
 
   // выделяем память под матрицы
   int ** a = matrix_init(wa, ha);
@@ -94,6 +92,11 @@ int main(void) {
   // настраиваем измерение времени;
   uint64_t freq = read_cntfrq();
 
+  // прогрев кэша
+  for (int i = 0; i < 5; i++) {
+    matrix_multiply(a, b, wa, ha);
+  }
+
   // перемножаем матрицы
   uint64_t start = read_cntvct();
   matrix_multiply(a, b, wa, ha);
@@ -104,9 +107,8 @@ int main(void) {
   matrix_destroy(b, wa);
 
   // отчитываемся
-  double time = (double)(finish - start) / freq;
-               
-  printf("time: %lf\n", time);
+  long double time = (double)(finish - start) / freq;
+  printf("time: %Lf\n", time);
 
   // конец
   return EXIT_SUCCESS;
