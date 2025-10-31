@@ -1,3 +1,7 @@
+<img width="1280" height="720" alt="2025-10-31" src="https://github.com/user-attachments/assets/0f208e24-5a69-41a1-a7c0-80c841d6d20e" />
+
+Youtube-запись от `2025-10-31`: https://youtu.be/XaqcEISmLKU
+
 > [!CAUTION]
 > Если можно без `malloc()` — нужно без `malloc()`
 
