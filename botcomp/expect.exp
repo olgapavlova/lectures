@@ -1,0 +1,45 @@
+#!/usr/bin/expect -f
+
+# MAC-адрес устройства
+set MAC "96:90:16:63:2D:25"
+# Handle RX
+set HANDLE "0x0010"
+# Команда в hex ("kup")
+set CMD "6b7570"
+
+# Устанавливаем таймаут ожидания
+set timeout 10
+
+# Запускаем gatttool интерактивно
+spawn sudo gatttool -b $MAC -I
+
+# Ждём приглашения gatttool
+expect ">"
+
+sleep 1
+
+# Отправляем команду connect
+send "connect\r\n"
+
+# Ждём подтверждения подключения
+expect {
+    "Connection successful" { }
+    timeout { puts "Connection failed"; exit 1 }
+}
+
+send "char-desc\r"
+
+sleep 10
+
+# Отправляем команду в RX handle
+send "char-write-req $HANDLE $CMD\r"
+
+sleep 10
+
+send "char-write-req $HANDLE 6b736974\r"
+
+# Ждём подтверждения (gatttool обычно не выводит ничего на write-req)
+sleep 10
+
+expect eof
+

@@ -1,0 +1,2 @@
+connect
+char-write-req 0x0010 6b7570
