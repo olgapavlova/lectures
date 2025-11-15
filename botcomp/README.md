@@ -1,3 +1,6 @@
+<img width="1280" height="720" alt="2025-11-14" src="https://github.com/user-attachments/assets/77228424-6609-4c2e-ab58-b35b564ba505" />
+
+Youtube-запись от `2025-11-14`: https://youtu.be/47-qdqS88AE
 # Управляем робособакой через CLI
 
 ## Устанавливаем Bluetooth-соединение
