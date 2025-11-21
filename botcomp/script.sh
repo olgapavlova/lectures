@@ -10,10 +10,12 @@ GT_PID=$!
 GT_STDIN="/proc/$GT_PID/fd/0"
 
 # Ждём, пока соединение установится
-sleep 2
+sleep 10
 
 # Отправляем команду
 echo "char-write-req $HANDLE $CMD" > "$GT_STDIN"
+
+sleep 10
 
 # Можно завершить gatttool
 kill $GT_PID
