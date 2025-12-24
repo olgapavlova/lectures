@@ -1,10 +1,14 @@
+<img width="1280" height="720" alt="2025-12-19" src="https://github.com/user-attachments/assets/f643c2fa-1711-4dc2-877e-973d24689880" />
+
+Youtube-запись от `2025-12-19`: https://youtu.be/E3TSUvToqCI
+
 # Как, не задумываясь, писать embedded-код для любой железки?
 `Дано:` ~20 микроконтроллеров + 38 плат + ~10 микрокомпьютеров
 
-![](IMG_0331.jpeg)
+![IMG_0331](https://github.com/user-attachments/assets/738d8f40-a07b-4135-86b6-3d5458e5efa1)
+
 
 `Требуется:` подключать к USB и писать код, не отвлекаясь на DevOps
-
 
 `В чём проблема:` *toolchain — SDK — компилятор — отладчик — прошивка — debugger — лучше-бы-вы-взяли-STM32 — UART — IDE — плагины — под-BLE-своя-библиотека — терминал — провод — это-другой-shell — ОС — CMake — Espressif-не-даёт-datasheet — …*
 
