@@ -82,7 +82,7 @@ classDef blue fill:#0077BB,stroke:#0077BB,color:#F6F0D8;
 ### 2 • Пощупаем настоящее программирование ~~за вымя~~
 
 #### Виртуальная среда разработки
-> [!INFO]
+> [!IMPORTANT]
 > Sketch — Processing — p5.js
 
 <img width="2184" height="1262" alt="2025-12-26 17-34-15 verbs" src="https://github.com/user-attachments/assets/071c4beb-b19d-4317-8c77-2eba8722adf5" />
@@ -91,7 +91,7 @@ classDef blue fill:#0077BB,stroke:#0077BB,color:#F6F0D8;
 > • *внутренний язык* — — Wired — Java — Python — JavaScript — C
 
 #### Электронный документ
-> [!INFO]
+> [!IMPORTANT]
 > Google \* — Obsidian — Microsoft \* — vim — …
 
 ![Кусочек багтрекера | SobakaPav.ru](https://sobakapav.ru/_astro/5.DBDwrCPE_2m1TGG.webp)
@@ -100,7 +100,7 @@ classDef blue fill:#0077BB,stroke:#0077BB,color:#F6F0D8;
 > • *пропиетарные и редкие языки*
 
 #### Оболочка операционной системы
-> [!INFO]
+> [!IMPORTANT]
 > macOS — iOS — Linux
 
 <img width="2184" height="1262" alt="Pasted image 20251226173839" src="https://github.com/user-attachments/assets/e03e7381-847c-44ff-ba58-bb489dc305b9" />
@@ -109,7 +109,7 @@ classDef blue fill:#0077BB,stroke:#0077BB,color:#F6F0D8;
 > • Automator — bash script
 
 #### Физический мир
-> [!INFO]
+> [!IMPORTANT]
 > Оборудование — yмный дом — сети и связь — голосовые помощники 
 
 <img width="2184" height="1334" alt="Pasted image 20251226174246" src="https://github.com/user-attachments/assets/0828720d-c423-4f3a-b513-7b1ad89ab2e3" />
@@ -192,7 +192,7 @@ classDef black fill:#272727,stroke:#272727,color:#FBFAF3;
 
 ```
 
-> [!INFO]
+> [!IMPORTANT]
 > А теперь давайте займёмся своими делами
 > Автоматизируем своё. Как можем.
 > А программисты — своё.
@@ -218,7 +218,7 @@ classDef black fill:#272727,stroke:#272727,color:#FBFAF3;
 
 
 ## И что нам нужно?
-> [!INFO]
+> [!IMPORTANT]
 > Экспертиза в предметной области
 
 > → **Находить** и формулировать задачи
