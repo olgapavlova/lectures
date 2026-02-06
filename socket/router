@@ -1,0 +1,99 @@
+import os
+import socket
+import time
+from meshtastic.serial_interface import SerialInterface
+from pubsub import pub
+
+MSG_SOCKET_PATH = "/tmp/mesh-msg.sock"
+GPS_SOCKET_PATH = "/tmp/mesh-gps.sock"
+
+
+def setup_unix_server(path: str) -> socket.socket:
+    # удалить старый сокет-файл, если остался
+    try:
+        os.unlink(path)
+    except FileNotFoundError:
+        pass
+
+    s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+    s.bind(path)
+    s.listen(1)          # один читатель на сокет (упростим)
+    s.setblocking(False) # чтобы accept() не блокировал
+    return s
+
+
+msg_server = setup_unix_server(MSG_SOCKET_PATH)
+gps_server = setup_unix_server(GPS_SOCKET_PATH)
+
+msg_conn = None
+gps_conn = None
+
+print("UNIX sockets ready:")
+print("  MSG:", MSG_SOCKET_PATH)
+print("  GPS:", GPS_SOCKET_PATH)
+
+# подключение к Meshtastic
+iface = SerialInterface("/dev/ttyUSB0")
+print("Meshtastic interface ready")
+
+
+def try_accept(server: socket.socket, current_conn):
+    """Если клиент уже подключён — оставляем. Если нет — пробуем принять без блокировки."""
+    if current_conn is not None:
+        return current_conn
+    try:
+        conn, _ = server.accept()
+        conn.setblocking(True)  # sendall() пусть блокирует, так проще
+        return conn
+    except BlockingIOError:
+        return None
+
+
+def try_send(conn, line: str):
+    """Отправить строку. Если клиент отвалился — вернуть None."""
+    if conn is None:
+        return None
+    try:
+        conn.sendall(line.encode("utf-8"))
+        return conn
+    except (BrokenPipeError, ConnectionResetError, OSError):
+        try:
+            conn.close()
+        except Exception:
+            pass
+        return None
+
+
+def on_receive(packet, interface):
+    global msg_conn, gps_conn
+
+    decoded = packet.get("decoded", {})
+
+    # не блокируемся на accept: только подцепляемся, если читатель уже пришёл
+    msg_conn = try_accept(msg_server, msg_conn)
+    gps_conn = try_accept(gps_server, gps_conn)
+
+    # 1) геометка
+    gps = decoded.get("position")
+    if isinstance(gps, dict):
+        lat = gps.get("latitude")
+        lon = gps.get("longitude")
+        ts = gps.get("time", int(time.time()))
+        if lat is not None and lon is not None:
+            line = f"POS {lat} {lon} {ts}\n"
+            gps_conn = try_send(gps_conn, line)
+
+    # 2) текстовое сообщение
+    text = decoded.get("text")
+    if text:
+        line = f"MSG {text}\n"
+        msg_conn = try_send(msg_conn, line)
+
+    # 3) остальное — игнор
+
+
+pub.subscribe(on_receive, "meshtastic.receive")
+
+print("Bridge running.")
+while True:
+    time.sleep(1)
