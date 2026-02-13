@@ -1,5 +1,9 @@
+<img width="1280" height="720" alt="2026-02-13" src="https://github.com/user-attachments/assets/03bc2aed-3099-4af4-8e1a-c85cc3da8fe2" />
 
-# Нам бы интерфейсика капельку, а, а?…
+# Нам бы интерфейсика в терминал капельку, а, а?…
+
+Youtube-запись от `2026-02-13`: https://youtu.be/O3mq37yPjqQ
+
 > [!WARNING]
 > CLI
 > Command Line **Interface**
