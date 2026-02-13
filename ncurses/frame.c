@@ -19,6 +19,10 @@ int main(void) {
   WINDOW * w = newwin(5, 13, 2, 3);
   if(!w) perror("newwin();");
 
+  box(w, 0, 0);
+  wrefresh(w);
+  wgetch(w);
+
   // рамочку сделаем
   cchar_t vert_char1, horiz_char1,
         tl_corner1, tr_corner1,
@@ -72,11 +76,11 @@ int main(void) {
   wgetch(u);
 
   wmove(w, 2, 2);
-  waddstr(w, "Как дела?");
+  waddstr(w, "Чё как?");
   wgetch(w);
 
   wmove(u, 3, 2);
-  waddstr(u, "Нормуль");
+  waddstr(u, "Норм");
   wgetch(u);
 
   // заканчиваем
