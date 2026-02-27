@@ -1,3 +1,6 @@
+<img width="1280" height="720" alt="2026-02-27" src="https://github.com/user-attachments/assets/dc2d1a3e-3683-44ec-9f32-a792251cc5fa" />
+
+Youtube-запись от `2026-02-27`: https://youtu.be/FeAi2kqFKAk
 
 # OAuth 2.0 — путь к dashboard'у
 > [!WARNING]
