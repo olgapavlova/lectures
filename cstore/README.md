@@ -1,4 +1,6 @@
 
+<img width="1280" height="720" alt="2026-03-06" src="https://github.com/user-attachments/assets/c2278c71-d15f-4b57-aa68-fcc47aa6a0cb" />
+
 Youtube-запись от `2026-03-06`: https://youtu.be/JeJYn57euCA
 
 # Шифруемся на микроконтроллере
@@ -220,5 +222,6 @@ classDef black fill:#272727,stroke:#272727,color:#FBFAF3;
 > Великая сила уровней абстракции.
 
 …но про NVS уже точно не в этот раз.
+
 
 
