@@ -5,7 +5,7 @@ CFLAGS = -Wall -Wextra -Werror \
 LFLAGS = 
 
 BUILD_DIR  = build
-SRC        = zero test
+SRC        = json test
 SRC_O      = $(addsuffix .o,$(SRC))
 SRC_O_PATH = $(addprefix $(BUILD_DIR)/,$(SRC_O))
 

@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include "zero.h"
+#include "json.h"
 
 #define TRUE_FILE "tests/true.txt"
 #define FALSE_FILE "tests/false.txt"
