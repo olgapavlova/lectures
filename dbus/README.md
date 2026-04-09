@@ -1,3 +1,6 @@
+
+<img width="1280" height="720" alt="2026-04-03" src="https://github.com/user-attachments/assets/3f6d090b-7607-44be-8b55-d1364eb23392" />
+
 Youtube-запись от `2026-04-03`: https://youtu.be/Vfl8BZm01PY
 
 # DBus — шина, Bluetooth дарящая
