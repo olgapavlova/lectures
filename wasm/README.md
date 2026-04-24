@@ -1,3 +1,7 @@
+<img width="1280" height="720" alt="2026-04-24" src="https://github.com/user-attachments/assets/c65f8a45-e986-4bc1-a600-7a69a5d6aa6c" />
+
+Youtube-запись от `2026-04-24`: https://youtu.be/kgxmYLbicHs
+
 **Никогда вопросов глупых\
 Сам себе не задавай,**\
 А не то еще глупее\
