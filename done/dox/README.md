@@ -1,3 +1,5 @@
+Youtube-запись от `2026-01-16`: https://youtu.be/tinyqDClTXQ
+
 # `Doxygen` • Пишем документацию до кода
 > [!WARNING]
 > Вообще-то это модно.

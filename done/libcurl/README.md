@@ -1,3 +1,5 @@
+Youtube-запись от `2026-02-20`: https://youtu.be/nE6E3Dnfq98
+
 # Осознанно ходим в Интернет
 
 Библиотека [`libcurl`](https://curl.se/libcurl/) — неплохо для начала.

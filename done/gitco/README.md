@@ -1,6 +1,6 @@
 <img width="1280" height="720" alt="2025-07-11" src="https://github.com/user-attachments/assets/912a67c9-d11f-480c-853a-7f859e666761" />
 
-Youtube-запись от `2025-07-11`: 
+Youtube-запись от `2025-07-11`: https://youtu.be/ZFVOB4V7ss4
 
 # Экономим нервы: две фишки git’а, затейливый bash-скрипт и настройки в отдельном файле
 

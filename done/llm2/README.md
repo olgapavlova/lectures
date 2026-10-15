@@ -1,4 +1,4 @@
-Youtube-запись от `2026-05-22`: https://youtu.be/c9pLgg0w488
+Youtube-запись от `2026-05-22`: https://youtu.be/gvFgDEq0cok
 
 ---
 

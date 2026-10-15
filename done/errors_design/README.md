@@ -1,3 +1,5 @@
+Youtube-запись от `2025-01-10`: https://youtu.be/IfpsVsSjlM0
+
 ![2025-01-10-05](https://github.com/user-attachments/assets/24c08776-c7ba-4c7a-b665-7f8e9ddbc0e2)
 # Ошибки как часть дизайна программы на C
 - Будут

@@ -1,5 +1,5 @@
 
-Youtube-запись от 2026-05-08: 
+Youtube-запись от 2026-05-08: https://youtu.be/uB1SZtYQ2Ws
 
 # Clang vs GCC — найди 10 отличий
 

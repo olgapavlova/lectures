@@ -1,0 +1,11 @@
+/ {
+    /* Исправление питания для платы StampS3A */
+    stamps3a_power {
+        compatible = "regulator-fixed";
+        regulator-name = "stamps3a_peripheral_power";
+        enable-gpios = <&gpio0 38 GPIO_ACTIVE_HIGH>;
+        regulator-boot-on;
+        regulator-always-on;
+    };
+};
+
