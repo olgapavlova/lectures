@@ -2,11 +2,11 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 # Привычка программировать
+От драйверов до LLM — но ближе к **C**, чем к Python.
+
 * [прямые эфиры на Twitch](https://www.twitch.tv/olgampavlova) каждую пятницу в 🕖 19:00 GMT+3
 * архив видеозаписей на [Youtube-канале](https://www.youtube.com/@olgapavlova)
 * [часто задаваемые вопросы](about/)
-
-От драйверов до LLM — но ближе к C, чем к Python.
 
 Это **не** рассказы о том, как надо или как правильно.\
 Это демонстрация того, как можно и что бывает.\
