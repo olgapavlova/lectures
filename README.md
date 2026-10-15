@@ -1,4 +1,3 @@
-![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCqroEMmvBx3EOTpWjXSlchg?style=social)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
