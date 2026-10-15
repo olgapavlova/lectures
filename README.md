@@ -2,13 +2,15 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-# Низкоуровневый код и железо
+# Привычка программировать
 * [Прямые эфиры на Twitch](https://www.twitch.tv/olgampavlova) каждую пятницу в 🕖 19:00 GMT+3.
 * Архив видеозаписей на [Youtube-канале](https://www.youtube.com/@olgapavlova).
 
-> Это **не** рассказы о том, как надо или как правильно.\
-> Это рассказы о том, как можно и что бывает.\
-> И живые попытки сделать что-то конкретное [в прямом эфире](https://www.twitch.tv/olgampavlova).
+От драйверов до LLM — но ближе к C, чем к Python.
+
+Это **не** рассказы о том, как надо или как правильно.\
+Это демонстрация того, как можно и что бывает.\
+И живые попытки сделать что-то конкретное [в прямом эфире](https://www.twitch.tv/olgampavlova).
 
 1. [Основы модульного тестирования](done/unit_testing_base/) — `2024-11-22`
 2. [Нюансы работы с файлами в C и Linux](done/file_in_c_linux/) — `2024-11-29`
