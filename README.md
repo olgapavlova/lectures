@@ -2,7 +2,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 # Привычка программировать
-От драйверов до LLM — но ближе к **C**, чем к Python.
+## От драйверов до LLM — но ближе к C, чем к Python
 
 * [прямые эфиры на Twitch](https://www.twitch.tv/olgampavlova) каждую пятницу в 🕖 19:00 GMT+3
 * архив видеозаписей на [Youtube-канале](https://www.youtube.com/@olgapavlova)
@@ -12,6 +12,7 @@
 > Это демонстрация того, как можно и что бывает.\
 > И живые попытки сделать что-то конкретное [в прямом эфире](https://www.twitch.tv/olgampavlova).
 
+## Конспекты к прошлым выпускам
 1. [Основы модульного тестирования](done/unit_testing_base/) — `2024-11-22`
 2. [Нюансы работы с файлами в C и Linux](done/file_in_c_linux/) — `2024-11-29`
 3. [Отладчик GDB и вообще отладка](done/gdb/) — `2024-12-06`
