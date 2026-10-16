@@ -1,17 +1,10 @@
----
-tags:
- - stream
-code: vistate
-series: tool
-pro: 
-date: 2026-10-16
-youtube: https://youtu.be/5-TwZpA9JBw
----
+<img width="1280" height="720" alt="2026-10-16" src="https://github.com/user-attachments/assets/c1530939-d080-44c9-acb0-bc363e8deed3" />
+
+Youtube-запись от `2026-10-16`: https://youtu.be/5-TwZpA9JBw
 
 # Рисуем-описываем конечные автоматы
 80% кода — всё более и более детальная алгорифмическая реализация конечных автоматов.  
 Но как насчёт записать сами конечные автоматы? И сначала довести до ума именно их.
-
 
 - Ключевая статья 1987 года "[Statecharts: a visual formalism for complex systems](https://www.sciencedirect.com/science/article/pii/0167642387900359)" (PDF-версия бесплатна)
 
@@ -112,10 +105,14 @@ class Just_Released cyan
 
 [Stately Sketch](https://sketch.stately.ai) — превращает Mermaid-схему… во что?  
 Во что-то шевелящееся.  
-![[something.png]]
+
+<img width="861" height="191" alt="something" src="https://github.com/user-attachments/assets/6468b6e5-d742-48f4-bc08-1b48ae0de4a4" />
+
 
 Но вот что обидно — нам **явно** что-то недодали:  
-![[empty-context.png]]
+
+<img width="294" height="301" alt="empty-context" src="https://github.com/user-attachments/assets/ceb0a537-5122-45c5-8681-3e3dda625c47" />
+
 
 Как же так, мы хотим контекста! А нету.
 
@@ -173,7 +170,9 @@ uvx --from "git+https://github.com/vgmakeev/xstate-mermaid.git" xstate-dsl merma
 
 Читать и писать такое — мало радости.  
 **И оно даже не работает!**  
-![[does-not-work.png]]
+
+<img width="1131" height="144" alt="does-not-work" src="https://github.com/user-attachments/assets/cc07503f-942e-4ca9-a613-ad905121427a" />
+
 
 Но сейчас заработает. Сейчас-сейчас.  
 Нужно только убрать лишнее и оставить только содержание `config`
@@ -222,7 +221,8 @@ Ready: {
 ```
 
 Ух ты!  
-![[Pasted image 20261016182653.png]]
+
+<img width="214" height="501" alt="wow" src="https://github.com/user-attachments/assets/460da37f-eefb-417a-a579-5aa5e9324c40" />
 
 > [!WARNING]
 > **Человечество не подписалось**  
